@@ -1,0 +1,90 @@
+<h5><button type="button" (click)=cancel()>Cancel</button></h5>
+
+<div class="container">
+
+    <div class='survey-question'>
+        <form action="/add_question" #formCtrl="ngForm" method="post">
+        
+          <div class='pair'>
+              <p id='pQuestion'>Question:</p>
+              <input type='text'
+              required
+              minlength="8"
+              name='pQuestion'
+              maxlength="200"
+              [(ngModel)]="surveyDataInst.question"
+              #pQuestion='ngModel'>
+              <span *ngIf="pQuestion.errors?.required && pQuestion.dirty && pQuestion.invalid"><p class="error">Question is required</p></span>
+              <span *ngIf="pQuestion.errors?.minlength && pQuestion.dirty && pQuestion.invalid"><p class="error">Question has to be more than 8 characters.</p></span>
+              <!-- <p class="error">{{ first_name.errors?.required}}</p> -->
+              <!-- <p class="error">{{ first_name.errors?.pattern | json }}</p> -->
+          </div>
+
+          <div class='pair'>
+              <p id='pOption1'>Option 1:</p>
+              <input type='text'
+              required
+              minlength="3"
+              maxlength="100"
+              name='pOption1'
+              [(ngModel)]="surveyDataInst.option_one"
+              #pOption1='ngModel'>
+              <span *ngIf="pOption1.errors?.required && pOption1.touched && pOption1.invalid"><p class="error">Option 1 is required</p></span>
+              <span *ngIf="pOption1.errors?.minlength && pOption1.touched && pOption1.invalid"><p class="error">Option 1 has to be more than 3 characters.</p></span>
+              <!-- <p class="error">{{ last_name.errors | json }}</p> -->
+          </div>
+
+          <div class='pair'>
+              <p id='pOption2'>Option 2:</p>
+              <input type='text'
+              required
+              minlength="3"
+              maxlength="100"
+              name='pOption2'
+              [(ngModel)]="surveyDataInst.option_two"
+              #pOption2='ngModel'>
+              <span *ngIf="pOption2.errors?.required && pOption2.touched && pOption2.invalid"><p class="error">Option 2 is required</p></span>
+              <span *ngIf="pOption2.errors?.minlength && pOption2.touched && pOption2.invalid"><p class="error">Option 2 has to be more than 3 characters.</p></span>
+              <!-- <p class="error">{{ last_name.errors | json }}</p> -->
+          </div>
+
+          <div class='pair'>
+              <p id='pOption3'>Option 3:</p>
+              <input type='text'
+              required
+              minlength="3"
+              maxlength="100"
+              name='pOption3'
+              [(ngModel)]="surveyDataInst.option_three"
+              #pOption3='ngModel'>
+              <span *ngIf="pOption3.errors?.required && pOption3.touched && pOption3.invalid"><p class="error">Option 3 is required</p></span>
+              <span *ngIf="pOption3.errors?.minlength && pOption3.touched && pOption3.invalid"><p class="error">Option 3 has to be more than 3 characters.</p></span>
+              <!-- <p class="error">{{ last_name.errors | json }}</p> -->
+          </div>
+          
+          <div class='pair'>
+              <p id='pOption4'>Option 4:</p>
+              <input type='text'
+              required
+              minlength="3"
+              maxlength="100"
+              name='pOption4'
+              [(ngModel)]="surveyDataInst.option_four"
+              #pOption4='ngModel'>
+              <span *ngIf="pOption4.errors?.required && pOption4.touched && pOption4.invalid"><p class="error">Option 4 is required</p></span>
+              <span *ngIf="pOption4.errors?.minlength && pOption4.touched && pOption4.invalid"><p class="error">Option 4 has to be more than 3 characters.</p></span>
+              <!-- <p class="error">{{ last_name.errors | json }}</p> -->
+          </div>
+
+        <br>
+        <br>
+        <!-- <p class="error">{{ !formCtrl.form.valid | json }}</p> -->
+        <button type="button" [disabled]="!formCtrl.form.valid" (click)="createPoll()">CreatePoll</button>
+        <br>
+      </form>
+
+      <!-- <button (click)='clickMe()'>Click Me</button> -->
+  </div>
+
+
+</div>

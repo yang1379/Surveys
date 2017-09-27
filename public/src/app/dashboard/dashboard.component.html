@@ -1,0 +1,48 @@
+<div class='container'>
+    <div class='header'>
+        <!-- <h5><a [routerLink]="['create']">Create A New Poll</a></h5> -->
+        <!-- <h5><a href="" (click)=createPoll()>Create A New Poll</a></h5> -->
+        <!-- <h5><a href="" (click)=logout()>Logout</a></h5> -->
+        <h5><button type="button" (click)=createPoll()>Create A New Poll</button></h5>
+        <h5><button type="button" (click)=logout()>Logout</button></h5>
+    </div>
+
+    <!-- <div class='polls' style="text-align:center"> -->
+    <div class='polls'>
+      <h2>Current Polls</h2>
+
+      <input type='text' placeholder="Search" #pSearchTerm [(ngModel)]="pTerm"/>
+      <table>
+          <tr>
+            <th>Name</th>
+            <th>Survey Question</th>
+            <th>Date Posted</th>
+            <th>Action</th>
+            <th>ID</th>
+          </tr>
+          <tr class="survey-row" *ngFor="let survey of surveyDataInst | searchFilter:pTerm">
+            <td>{{ survey.creator }}</td>
+            <td><p (click)=takeSurvey(survey._id)><font color="blue"><u>{{ survey.question }}</u></font></p><button type="button" (click)=takeSurvey(survey._id)>Take Survey</button></td>
+            <td>{{ survey.createdAt | date: 'yMMMdjms' }}</td>
+            <td><p *ngIf="survey.creator == user_name"><button type="button" (click)=delete(survey._id)>Delete</button></td>
+            <td>{{ survey._id }}%</td>
+          </tr>
+      </table>
+
+    </div>
+
+    <!-- <input type='text' #pSearchTerm [(ngModel)]="pTerm"/>
+    <table>
+        <tr>
+          <th>Name</th>
+          <th>Score</th>
+          <th>Percent</th>
+        </tr>
+        <tr class="score-row" *ngFor="let score of scoreDataInst | searchFilter:pTerm">
+          <td>{{ score.name }}</td>
+          <td>{{ score.correct }}/{{total_questions}}</td>
+          <td>{{ score.percent }}%</td>
+        </tr>
+    </table> -->
+
+</div>

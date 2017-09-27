@@ -1,0 +1,44 @@
+#container{
+    height: 1215px;
+    width: 970px;
+    background-color: White;
+    margin: 0px auto;
+    margin-top: 15px;
+    /* margin-left: 15px;*/ 
+   }
+   
+   .messages p {
+       color: red;
+   }
+
+   .success p {
+       color: blue;
+   }
+   
+   .login {
+       width: 600px;
+       margin-bottom: 10px;
+       display: inline-block;
+       vertical-align: top;
+   }
+   
+   .pair {
+       width: 600px;
+       height: 25px;
+       margin-top: 10px;
+   }
+   
+   .pair p {
+     width: 100px;
+     display:inline-block;
+     text-align: left;
+     padding-right: 5px;
+   }
+
+   .pair p.error {
+    width: 300px;
+    color: red;
+    display:inline-block;
+    text-align: left;
+    padding-right: 5px;
+  }

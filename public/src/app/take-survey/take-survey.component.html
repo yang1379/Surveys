@@ -1,0 +1,38 @@
+<h5><button type="button" (click)=goToPolls()>Go to Polls</button></h5>
+
+<div class='container'>
+  <div class='poll-question'>
+    <h2>{{ singleSurvey?.question }}</h2>
+    <p>Click the Vote button to choose one</p>
+  </div>
+
+  <table>
+      <tr>
+        <th>Option</th>
+        <th>Current Count Of Votes</th>
+        <th>Action</th>
+      </tr>
+      <tr>
+        <td>{{ singleSurvey?.option_one }}</td>
+        <td>{{ singleSurvey?.count_one }}</td>
+        <td><button type="button" (click)=voteOne()>Vote</button></td>
+      </tr>
+      <tr>
+        <td>{{ singleSurvey?.option_two }}</td>
+        <td>{{ singleSurvey?.count_two }}</td>
+        <td><button type="button" (click)=voteTwo()>Vote</button></td>
+      </tr>
+      <tr>
+        <td>{{ singleSurvey?.option_three }}</td>
+        <td>{{ singleSurvey?.count_three }}</td>
+        <td><button type="button" (click)=voteThree()>Vote</button></td>
+      </tr>
+      <tr>
+        <td>{{ singleSurvey?.option_four }}</td>
+        <td>{{ singleSurvey?.count_four }}</td>
+        <td><button type="button" (click)=voteFour()>Vote</button></td>
+      </tr>
+  </table>
+
+</div>
+

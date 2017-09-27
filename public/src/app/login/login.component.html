@@ -1,0 +1,24 @@
+<div class='container'>
+
+  <div class='login'>
+      <form action="/login" #formCtrl="ngForm" method="post">
+        <div class='pair'>
+            <p id='pUser_name'>Your Name:</p>
+            <input type='text'
+            required
+            minlength="2"
+            name='pUser_name'
+            maxlength="100"
+            [(ngModel)]="user_name"
+            #pUser_name='ngModel'>
+            <span *ngIf="pUser_name.errors?.required && pUser_name.dirty && pUser_name.invalid"><p class="error">Your name is required</p></span>
+            <span *ngIf="pUser_name.errors?.minlength && pUser_name.dirty && pUser_name.invalid"><p class="error">Your name has to be more than 2 characters.</p></span>
+        </div>
+
+        <br>
+        <button type="button" [disabled]="!formCtrl.form.valid" (click)="login()">Login</button>
+        <br>
+      </form>
+  </div>
+
+</div>
